@@ -98,10 +98,9 @@ Resources:
               command: "cp wp-config-sample.php wp-config.php"
   EC2WaitHandle:
     Type: 'AWS::CloudFormation::WaitConditionHandle'
-    DependsOn: S3
   EC2WaitCondition:
     Type: 'AWS::CloudFormation::WaitCondition'
-    DependsOn: S3
+    DependsOn: EC2
     Properties:
       Count: 1
       Handle: !Ref EC2WaitHandle
